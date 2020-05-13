@@ -1,0 +1,34 @@
+MEMORY {
+    FLASH (rx) : ORIGIN = 0xe420, LENGTH = 0x400
+    RAM (rwx) :  ORIGIN = 0x20001800, LENGTH = 0x200
+}
+
+
+OUTPUT_FORMAT ("elf32-littlearm")
+
+SECTIONS {
+    .text : {
+        KEEP(*(.vectors))
+        *(.text*)
+        *(.rodata*)
+        . = ALIGN(4);
+    } > FLASH
+
+    __etext = .;
+
+    .data : AT (__etext) {
+        __data_start = .;
+        *(.data*)
+        . = ALIGN(4);
+        __data_end = .;
+    } > RAM
+
+    .bss : {
+        __bss_start = .;
+        *(.bss*)
+        *(COMMON)
+        . = ALIGN(4);
+        __bss_end = .;
+        __end = .;
+    } > RAM
+}
