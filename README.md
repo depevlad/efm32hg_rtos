@@ -1,4 +1,4 @@
-# hackOS
+# efm32_OS
 
 Pre-emptive, multi-tasking, real-time operating system for the EFM32HG. 
 
