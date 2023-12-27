@@ -1,6 +1,6 @@
 # mbed_os
 
-Pre-emptive, multi-tasking, real-time operating system for embedded systems. Specialised for the EFM32HG Starter Kit SoC.
+Pre-emptive, multi-tasking, real-time operating system for embedded devices. Specialised for the EFM32HG Starter Kit SoC.
 
 # Requirements
 
